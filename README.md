@@ -280,7 +280,7 @@ CUDA-capable GPU (optional but recommended)
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/tumblr-byte/defect-detection.git
+git clone https://github.com/Pooja-Vachhad/defect-detection.git
 cd defect-detection
 ```
 
