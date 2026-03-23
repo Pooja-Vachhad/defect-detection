@@ -350,6 +350,6 @@ This will:
 
 - Integrate Grad-CAM for defect region visualization and model explainability
 - Deploy as REST API using FastAPI for production integration
-- Export to ONNX/TensorRT for optimized edge device deployment
+- Export to ONNX for optimized edge device deployment
 
 ---
