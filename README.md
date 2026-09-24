@@ -104,32 +104,17 @@ Automated inspection solves these problems while maintaining high accuracy.
 
 ### Why ResNet-18?
 
-We chose **ResNet-18** with transfer learning for several key reasons:
+I chose **ResNet-18** with transfer learning for 2 key reasons:
 
-#### 1. **Skip Connections Solve Degradation Problem**
-Traditional deep CNNs suffer from vanishing gradients, making training difficult. ResNet's residual connections allow gradients to flow directly through the network:
-
-```
-Output = F(x) + x  (where F(x) is learned residual)
-```
-
-This enables training of much deeper networks without performance degradation.
-
-#### 2. **Transfer Learning Efficiency**
+#### 1. Transfer Learning
 - Pre-trained on ImageNet (1.2M images, 1000 classes)
-- Learns robust low-level features (edges, textures, patterns)
-- Requires less training data and time for our specific task
-- Achieves excellent performance with only 6,633 training images
+- Learns robust low-level features (edges, textures, patterns) that carry over to casting defects
+- Needs less training time and data than training from scratch on ~6.6k images
 
-#### 3. **Right Balance for Our Task**
-- **ResNet-18** (11M parameters): Lightweight, fast inference, less prone to overfitting
-- vs. ResNet-50 (25M params): Heavier, may overfit on small datasets
-- vs. ResNet-152 (60M params): Overkill for binary classification
+#### 2. Right Size for the Task
+- ResNet-18 (~11M parameters): lightweight, standard baseline for binary classification
+- Already reached ~99% accuracy, so a larger model wasn't needed
 
-#### 4. **Computational Efficiency**
-- Training time: ~40 seconds per epoch (415 batches)
-- Inference: Real-time capable for production deployment
-- Memory footprint: Suitable for edge devices
 
 ### Architecture Overview
 
